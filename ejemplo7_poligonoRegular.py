@@ -1,6 +1,6 @@
 # Se puede hacer una referencia a una api por medio de as
 import turtle as t #Carcar la api de turtle
-t.setup (500,500) # Configurar el espacio de dibujo
+t.setup (800,800) # Configurar el espacio de dibujo
 
 t.shape("turtle") # Dar forma de una tortuga
 t.color("green") # Dar color
@@ -41,10 +41,22 @@ def poligonoRegular(px, py, radio, lados):
 
     t.color("green")
 
+def option():
+    n = int(input("Write a number: "))
+    if(n == 1):
+        for i in range(15):
+            print(t.pos())
+            poligonoRegular(0, 0, 400 / 2, 15 - i)
+    elif(n == 2):
+        for n in range(3, 21):
+            poligonoRegular(0, 0, n*10, n)
+    else:
+        for i in range(2, 13):
+            poligonoRegular(i * 10, 0, 400 / 2, 14 - i)
+
 t.speed(100)
-for i in range(15):
-    print(t.pos())
-    poligonoRegular(0, 0, 400 / 2, 15 - i)
+
+option()
 
 t.done() # Poner abajo del todo
 t.bye()  # un done-bye para cerrar las rutinas
